@@ -3,6 +3,7 @@ var countWords = function(sentence) {
 };
 
 describe("countWords", function() {
+//different edge cases
   it("should count a single word", function() {
     expect(countWords("a")).toBe(1);
   });

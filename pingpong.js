@@ -4,6 +4,8 @@ function Add(num) {
   } else {
       var numSplit = num.split(",")   //splits by ,
 
+    //2 DIFFERENT METHODS (not both):
+      //FOR LOOP METHOD
       var total = 0;
       for (let i = 0; i < numSplit.length; i++) {
         //numSplit[0] = '1' --> parseFloat to turn it into a number --> add that number to total (reassigns with new value)
@@ -11,6 +13,10 @@ function Add(num) {
       }
       return total;
 
+      //ARRAY REDUCE METHOD
+      var sum = numSplit.reduce((prev, current) => parseFloat(prev) + parseFloat(current), 0);
+      //0 at the end tells the reduce to start at 0(prev), so that if you happen to have 1 number only, it will be prev=0, current=num)
+      return sum;
     }
 }
 
